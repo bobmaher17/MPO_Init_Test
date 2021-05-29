@@ -29,6 +29,4 @@ Route::get('/task_one', function () {
 });
 Route::get('task_one/order_list', [productController::class, 'getData'])->name('orders.list');
 
-Route::get('/task_two', function () {
-    return view('task_two');
-});
+Route::get('/task_two', [productController::class, 'funcTaskTwo']);

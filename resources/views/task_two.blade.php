@@ -20,13 +20,34 @@
         body {
             font-family: 'Nunito', sans-serif;
         }
+
+        .center {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+            margin-top: -50px;
+            margin-left: -100px;
+        }
     </style>
 </head>
 
-<body class="antialiased">
-    <div class="max-w-md mx-auto bg-white rounded-xl overflow-hidden md:max-w-2xl flex items-center justify-center h-screen">
-        Hello Task Two
+<body class="bg-gray-100 text-gray-900 tracking-wider leading-normal center">
+    <div class="max-w-md mx-auto bg-blue-400 rounded-xl overflow-hidden md:max-w-2xl flex items-center justify-center mb-10">
+        By PHP:
+        @foreach($result as $res)
+        {{ $res }}
+        @endforeach
+    </div>
+    <div id="taskTwoJs" class="max-w-md mx-auto bg-blue-400 rounded-xl overflow-hidden md:max-w-2xl flex items-center justify-center">
+        <!-- Showed By JS -->
     </div>
 </body>
 
 </html>
+<script>
+    let numberData = [1, -1, 3, -4, 5, -2, 7, 4, 2]
+    let positiveNumberOnly = numberData.filter(num => num > -1).sort()
+
+    document.getElementById("taskTwoJs").innerHTML = "By JS: " + positiveNumberOnly
+</script>

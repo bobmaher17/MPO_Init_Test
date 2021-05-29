@@ -8,9 +8,16 @@ use Yajra\DataTables\Facades\DataTables as DataTables;
 
 class productController extends Controller
 {
-    public function index()
+    public function funcTaskTwo()
     {
-        return view('task_one');
+        $data = array(1,-1, 3,-4, 5,-2, 7, 4, 2);
+        sort($data);
+        
+        $result = array_filter($data, function ($val) {
+            return $val > 0;
+        });
+
+        return view('/task_two', compact('result'));
     }
 
     public function getData(Request $request)

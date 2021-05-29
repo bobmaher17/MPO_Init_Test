@@ -20,10 +20,10 @@
 
 <body class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
     <div class="container w-full mx-auto px-2">
-    <!--Title-->
-    <h1 class="flex items-center font-sans font-bold break-normal text-green-500 px-2 py-8 text-xl md:text-2xl">
-        Orders Data
-    </h1>
+        <!--Title-->
+        <h1 class="flex items-center font-sans font-bold break-normal text-green-500 px-2 py-8 text-xl md:text-2xl">
+            Orders Data
+        </h1>
         <!--Card-->
         <div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
             <table id="table_order" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
@@ -41,7 +41,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                   
+
                 </tbody>
             </table>
         </div>
@@ -60,23 +60,49 @@
 <script>
     $(document).ready(function() {
         $('#table_order').DataTable({
-            responsive: true,
-            processing: true,
-            serverSide: true,
-            ajax: "{{ route('orders.list') }}",
-            columns: [
-                {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-                {data: 'barcode', name: 'barcode'},
-                {data: 'quantity', name: 'quantity'},
-                {data: 'total_price', name: 'total_price'},
-                {data: 'ready', name: 'ready'},
-                {data: 'on_hold', name: 'on_hold'},
-                {data: 'delivered', name: 'delivered'},
-                {data: 'packing', name: 'packing'},
-                {data: 'sent', name: 'sent'}
-            ]
-        })
-        .columns.adjust()
-        .responsive.recalc()
+                responsive: true,
+                processing: true,
+                serverSide: true,
+                ajax: "{{ route('orders.list') }}",
+                columns: [{
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex'
+                    },
+                    {
+                        data: 'barcode',
+                        name: 'barcode'
+                    },
+                    {
+                        data: 'quantity',
+                        name: 'quantity'
+                    },
+                    {
+                        data: 'total_price',
+                        name: 'total_price'
+                    },
+                    {
+                        data: 'ready',
+                        name: 'ready'
+                    },
+                    {
+                        data: 'on_hold',
+                        name: 'on_hold'
+                    },
+                    {
+                        data: 'delivered',
+                        name: 'delivered'
+                    },
+                    {
+                        data: 'packing',
+                        name: 'packing'
+                    },
+                    {
+                        data: 'sent',
+                        name: 'sent'
+                    }
+                ]
+            })
+            .columns.adjust()
+            .responsive.recalc()
     })
 </script>
