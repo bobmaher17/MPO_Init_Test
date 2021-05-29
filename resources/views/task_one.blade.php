@@ -41,28 +41,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>1111</td>
-                        <td>7</td>
-                        <td>180</td>
-                        <td>sample</td>
-                        <td>sample</td>
-                        <td>Sample</td>
-                        <td>Sample</td>
-                        <td>Sample</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>1122</td>
-                        <td>4</td>
-                        <td>40</td>
-                        <td>sample</td>
-                        <td>sample</td>
-                        <td>Sample</td>
-                        <td>Sample</td>
-                        <td>Sample</td>
-                    </tr>
+                   
                 </tbody>
             </table>
         </div>
@@ -81,7 +60,21 @@
 <script>
     $(document).ready(function() {
         $('#table_order').DataTable({
-            responsive: true
+            responsive: true,
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('orders.list') }}",
+            columns: [
+                {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+                {data: 'barcode', name: 'barcode'},
+                {data: 'quantity', name: 'quantity'},
+                {data: 'total_price', name: 'total_price'},
+                {data: 'ready', name: 'ready'},
+                {data: 'on_hold', name: 'on_hold'},
+                {data: 'delivered', name: 'delivered'},
+                {data: 'packing', name: 'packing'},
+                {data: 'sent', name: 'sent'}
+            ]
         })
         .columns.adjust()
         .responsive.recalc()

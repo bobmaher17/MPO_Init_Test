@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\productController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::get('/', function () {
 Route::get('/task_one', function () {
     return view('task_one');
 });
+Route::get('task_one/order_list', [productController::class, 'getData'])->name('orders.list');
 
 Route::get('/task_two', function () {
     return view('task_two');
