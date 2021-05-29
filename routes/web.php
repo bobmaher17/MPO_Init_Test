@@ -22,3 +22,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/task_one', function () {
+    return view('task_one');
+});
+
+Route::get('/task_two', function () {
+    return view('task_two');
+});

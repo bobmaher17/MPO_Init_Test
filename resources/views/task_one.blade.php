@@ -13,13 +13,7 @@
 
     <!-- Styles -->
     <style>
-        .btn {
-            @apply py-2 px-4 font-semibold rounded-lg shadow-md;
-        }
 
-        .btn-green {
-            @apply text-white bg-green-500 hover: bg-green-700;
-        }
     </style>
 
     <style>
@@ -31,18 +25,7 @@
 
 <body class="antialiased">
     <div class="max-w-md mx-auto bg-white rounded-xl overflow-hidden md:max-w-2xl flex items-center justify-center h-screen">
-        <div class="font-semibold">MPO INIT TEST - Maherdika Erlambang (Bandung, Indonesia)</div>
-        <a href="{{ url('/task_one') }}">
-            <button class="mr-2 bg-green-500 hover:bg-green-700 text-white font-bold rounded-lg border shadow-lg p-10">
-                Task 1
-            </button>
-        </a>
-
-        <a href="{{ url('/task_two') }}">
-            <button class="ml-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-lg border shadow-lg p-10">
-                Task 2
-            </button>
-        </a>
+        Hello Task One
     </div>
 </body>
 
